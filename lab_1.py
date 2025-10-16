@@ -19,7 +19,28 @@ for i in [220, 2, 9]:
     draw_line(0, 23, i)
 print()
 
-
+#Second task pattern
+filledcells = 7 - 1
+emptycells = 0
+numsoffcells = [int(x - 1) for x in range(8, 2, -1)]
+print(7 * '\x1b[31;47m \x1b[0m' + (sum(numsoffcells) * 2
+     - 7 * 2 + 1) * ' ' +
+     7 * '\x1b[31;47m \x1b[0m')
+for h in range(8):
+    if filledcells != 1:
+        emptycells += 1
+        print(' ' * sum(numsoffcells[0:emptycells]) +
+              '\x1b[31;47m \x1b[0m' * numsoffcells[emptycells] +
+              (sum(numsoffcells) * 2 - (sum(numsoffcells[0:emptycells +
+              1])) * 2 + 1) * ' ' + '\x1b[31;47m \x1b[0m' *
+              numsoffcells[emptycells] +
+              ' ' * sum(numsoffcells[0:emptycells]))
+        filledcells -= 1
+    else:
+        print((sum(numsoffcells)) * ' ' +
+              '\x1b[31;47m \x1b[0m' + (sum(numsoffcells)) * ' ')
+print()
+time.sleep(1)
 
 #Fird task graph
 m = []
